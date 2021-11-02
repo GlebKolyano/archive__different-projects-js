@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.container {
+  border: 2px solid rgb(158, 158, 158);
+  max-width: 1270px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.links {
+}
+.movie__app {
+  text-decoration: none;
+  color: white;
+}
+a:not(:hover) {
+  text-shadow: 2px 2px 2px rgb(85, 85, 85);
+}
