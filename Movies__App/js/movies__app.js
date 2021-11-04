@@ -1,7 +1,7 @@
-const APIKEY =  '04c35731a5ee918f014970082a0088b1';
-const APIURL =  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
+const APIKEY =  'b33505cebde4ca0f7f447922d0eafb5a';
+const APIURL =  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b33505cebde4ca0f7f447922d0eafb5a&page=";
 const SEARCHAPI =
-    "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+    "https://api.themoviedb.org/3/search/movie?&api_key=b33505cebde4ca0f7f447922d0eafb5a&query=";
 
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const mainWrapper = document.querySelector('.movies__wrapper')
@@ -40,15 +40,21 @@ getMovies(APIURL+page)
 async function getMovies(url) {
   const responce = await fetch(url)
   const respData = await responce.json()
-  console.log(respData.results)
+  
   showMovies(respData.results)
 }
 
 function showMovies(movies) {
   // clear mainWrapper
+  let count = 1
   mainWrapper.innerHTML = '';
    movies.forEach( movie => {
-    const {poster_path, title, vote_average, backdrop_path, overview} = movie
+    
+    if (count <= 18 ) {
+      
+      count++
+      
+      const {poster_path, title, vote_average, backdrop_path, overview} = movie
 
     const movieEl = document.createElement('div')
     movieEl.classList.add('movie__card')
@@ -65,6 +71,10 @@ function showMovies(movies) {
             `
   
     mainWrapper.appendChild(movieEl)
+    } else {
+
+    }
+    
   })
 }
 // creating color for rating 
@@ -94,3 +104,30 @@ form.addEventListener('submit', (event) => {
 })  
 
 
+// footer
+
+const footer = document.querySelector('.footer__row')
+getMoviesFooter()
+
+async function getMoviesFooter() {
+  let resFooter = await fetch(APIURL)
+  resFooter = await resFooter.json()
+  showMoviesFooter(resFooter.results)
+  console.log(resFooter.results)
+}
+
+function showMoviesFooter(resFooter) {
+  
+  resFooter.forEach((movieF) => {
+    
+    const {backdrop_path} = movieF
+    const movieElFoot = document.createElement('div')
+     movieElFoot.classList.add('footer__card')
+     movieElFoot.innerHTML = `
+          
+            <img src="${IMGPATH+backdrop_path}" alt="">
+          `
+    footer.appendChild( movieElFoot)
+    
+  })
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="/Speech&Synthesis__App/css/style.css">
+  <script src="/Speech&Synthesis__App/js/speech__app.js" defer></script>
+  <title>Speech</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="speech-block">
+        <div class="speech__wrapper">
+          <a href="/index.html" class="speech__logo"><img src="/Speech&Synthesis__App/img/_ymvaQuV.jpeg" alt="logo"
+              class="speech__logo"></a>
+          <form>
+
+            <div class="speech-form">
+              <textarea name="" id="input" cols="52" rows="3" style="width: 100%;"
+                placeholder="Type anything..."></textarea>
+            </div>
+            <div class="speech-form">
+              <label for="rate">Rate</label>
+              <div id="rate-value" class="speech-value">1</div>
+              <input type="range" id="rate" class="speech-range" min="0.5" max="2" value="1" step="0.1">
+            </div>
+            <div class="speech-form">
+              <label for="pitch">Pitch</label>
+              <div id="pitch-value" class="pitch-value">1</div>
+              <input type="range" id="pitch" class="pitch-range" min="0.5" max="2" value="1" step="0.1">
+            </div>
+            <div class="speech-form">
+              <select id="select" class="speech-select"></select>
+            </div>
+            <button class="speech-button">Speak</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>
