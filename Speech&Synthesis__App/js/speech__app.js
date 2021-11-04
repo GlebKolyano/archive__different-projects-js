@@ -38,7 +38,6 @@ if (synth.onvoiceschanged !== undefined) {
 // Speak
 const speak = () => {
   // background animation
-  body.style.background = 'black url(/Speech&Synthesis__App/img/rokid_wave_sound_fantasy.gif) bottom / 600px no-repeat'
   
 
 
@@ -77,10 +76,11 @@ const speak = () => {
 
     // speak
     synth.speak(speakText)
+    body.style.background = 'black url(/Speech&Synthesis__App/img/rokid_wave_sound_fantasy.gif) bottom / 600px no-repeat'
+  
   }
 }
 // listeners
-speechBtn.addEventListener
 
 
 // text form
@@ -97,4 +97,3 @@ speechRate.addEventListener('change', e => {
 })
 
 // voice select change
-speechSelect.addEventListener('change', e => speak())
