@@ -19,7 +19,7 @@ function createSnowFlake() {
   snowFlake.style.left = Math.random() * window.innerWidth + 'px'  
   snowFlake.style.animationDuration = (Math.random() * (30 - 25) + 25) + 's'
   snowFlake.style.opacity = Math.random()
-  snowFlake.style.fontSize = Math.floor(Math.random() * (20 - 10) + 12) + 'px' 
+  snowFlake.style.fontSize = Math.floor(Math.random() * (20 - 8) + 8) + 'px' 
 
 
   document.body.appendChild(snowFlake)
@@ -27,4 +27,7 @@ function createSnowFlake() {
     snowFlake.remove();
   }, 30000)
 }
+
+
+
 

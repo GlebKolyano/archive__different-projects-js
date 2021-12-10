@@ -6,19 +6,162 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/script.js" defer></script>
-  <title>Document</title>
+  <!-- css files -->
+  <link rel="stylesheet" href="/MusicPlayer__App/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <!-- js files -->
+  <script src="/MusicPlayer__App/js/datasongs.js" defer></script>
+  <script src="/MusicPlayer__App/js/musicplayer.js" defer></script>
+  <title>Music Player</title>
 </head>
 
 <body>
-  <div class="wrapper">
-    
-
-    
-  </div>
-  
-  
+  <audio src="" id="audio-source"></audio>
+  <!-- main section -->
+  <section class="home-section">
+    <!-- carousel -->
+    <div class="carousel">
+      <img src="/MusicPlayer__App/img/cover 1.png" class="active" alt="picture">
+      <img src="/MusicPlayer__App/img/cover 2.png" alt="picture">
+      <img src="/MusicPlayer__App/img/cover 3.png" alt="picture">
+      <img src="/MusicPlayer__App/img/cover 4.png" alt="picture">
+      <img src="/MusicPlayer__App/img/cover 5.png" alt="picture">
+    </div>
+    <!-- playlist -->
+    <h1 class="playlist__title">recently played</h1>
+    <div class="playlists-group">
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 6.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 1</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 7.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 2</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 8.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 3</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 9.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 4</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 10.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 5</p>
+      </div>
+    </div>
+    <h1 class="playlist__title">based on your listening</h1>
+    <div class="playlists-group">
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 11.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 1</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 12.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 2</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 13.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 3</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 9.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 4</p>
+      </div>
+      <div class="playlist-card">
+        <img src="/MusicPlayer__App/img/cover 10.png" alt="picture" class="playlist-card__img">
+        <p class="playlist-card__name">playlist 5</p>
+      </div>
+    </div>
+  </section>
+  <section class="music-player-section ">
+    <!-- buttons -->
+    <img src="/MusicPlayer__App/img/back.png" alt="" class="back-btn icon hide">
+    <img src="/MusicPlayer__App/img/nav.png" alt="" class="nav-btn icon hide">
+    <!-- info song -->
+    <h1 class="current-song-name">Song name 1</h1>
+    <p class="current-artist-name hide">artist 1</p>
+    <img src="/MusicPlayer__App/img/cover 3.png" alt="cover" class="current-cover-img hide">
+    <!-- seek bar container -->
+    <div class="seek-bar-container">
+      <input type="range" class="music-seek-bar" value="0">
+      <p class="current-time hide">00 : 00</p>
+      <p class="duration hide">00 : 00</p>
+    </div>
+    <!-- controls container -->
+    <div class="controls">
+      <span class="fas fa-redo"></span>
+      <div class="main">
+        <i class="fas fa-backward active"></i>
+        <i class="fas fa-play active"></i>
+        <i class="fas fa-pause"></i>
+        <i class="fas fa-forward active"></i>
+      </div>
+      <input type="range" class="volume-slider" max='1' value="0.5" step="0.1">
+      <span class="fas fa-volume-up"></span>
+    </div>
+  </section>
+  <section class="playlist-section ">
+    <img src="/MusicPlayer__App/img/back.png" alt="" class="back-btn icon">
+    <h1 class="title">playlist</h1>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 1.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 1</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 2.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 2</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 3.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 3</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 4.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 4</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 5.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 5</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 6.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 6</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 7.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 7</p>
+    </div>
+    <div class="queue">
+      <div class="queue-cover">
+        <img src="/MusicPlayer__App/img/cover 8.png" alt="cover">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="queue-name">song name 8</p>
+    </div>
+  </section>
 </body>
 
 </html>
